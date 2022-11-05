@@ -40,6 +40,7 @@ class _CreatePostPageState extends State<CreatePostPage> {
                 PostModel(
                   userId:
                       0000, //TODO: altere o id para o seu usuario criado na API
+                  //https://youtu.be/ercyQ1d3NAA?t=1136
                   title: titleController.text,
                   body: bodyController.text,
                 ),
