@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
 import 'package:flutter/material.dart';
+import 'package:resty_app/src/features/posts/single_post/single_post_page.dart';
 
 import '../posts_controller.dart';
 import '../posts_repository.dart';
@@ -36,6 +37,20 @@ class _PostsPageState extends State<PostsPage> {
                 return PostListTile(
                   index: index,
                   snapshot: snapshot,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        settings: RouteSettings(
+                          name: "/posts/${snapshot.data?[index].id}",
+                          arguments: snapshot.data?[index],
+                        ),
+                        builder: (context) => SinglePostPage(
+                          postModel: snapshot.data![index],
+                        ),
+                      ),
+                    );
+                  },
                 );
               },
             );
