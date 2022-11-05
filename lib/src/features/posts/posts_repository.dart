@@ -11,6 +11,11 @@ abstract class IPostRepository {
 
 class PostRepository implements IPostRepository {
   final _http = Client();
+  //TODO: acessar https://gorest.co.in/,
+  //criar uma conta,
+  //pegar o seu token
+  //e substituir abaixo
+
   final _headers = {
     "Authorization":
         "Bearer a07cd3e92e3b2bfe6182f5b973cff1be4c829d29f184f02fdcda0d12504623da",
