@@ -34,14 +34,20 @@ class _CreatePostPageState extends State<CreatePostPage> {
           ),
           ElevatedButton(
             onPressed: () async {
-              log("botão pressionado");
+              log("botão de criar novo post pressionado");
+
               await homeController.createPost(
                 PostModel(
-                  userId: 3817,
+                  userId:
+                      0000, //TODO: altere o id para o seu usuario criado na API
                   title: titleController.text,
                   body: bodyController.text,
                 ),
               );
+              if (mounted) {
+                log("navega para a primeira tela na pilha de navegação");
+                Navigator.popUntil(context, (route) => route.isFirst);
+              }
             },
             child: const Text("Publicar Post"),
           )
