@@ -22,6 +22,12 @@ class _PostsPageState extends State<PostsPage> {
       body: FutureBuilder(
         future: postsController.getAllPosts(),
         builder: (context, snapshot) {
+          if (snapshot.hasData && snapshot.data!.isEmpty) {
+            return const Center(
+              child: Text(
+                  "não há posts cadastrados\nverifique o seu token ou cadastre novos posts"),
+            );
+          }
           if (snapshot.connectionState == ConnectionState.done &&
               snapshot.hasData) {
             return ListView.builder(
