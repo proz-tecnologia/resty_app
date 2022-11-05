@@ -13,8 +13,8 @@ class SinglePostPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final routeSettings = ModalRoute.of(context)?.settings;
-    log(routeSettings?.name ?? "nulo");
-    log(routeSettings?.arguments.toString() ?? "nulo");
+    log("Nome da rota: ${routeSettings?.name}");
+    log("${routeSettings?.arguments}");
     return Scaffold(
       body: Column(
         children: [
